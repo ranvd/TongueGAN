@@ -43,7 +43,7 @@ print("checkpoint counter", checkpoint.save_counter)
 
 counter = 0
 for data in dataset:
-    mask, image = data
+    mask = data
     output = model.G(mask)
     for gen_img in output:
         cv2.imwrite("{}.png".format(counter),cv2.cvtColor(gen_img.numpy()*255, cv2.COLOR_RGB2BGR))
